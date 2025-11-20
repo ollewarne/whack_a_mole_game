@@ -1,0 +1,34 @@
+:root {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    max-width: 100dvw;
+}
+
+.game-board {
+    display: grid;
+    grid-template: repeat(3, minmax(100px, 33.33%)) / repeat(3, minmax(100px, 33.33%));
+    aspect-ratio: 1/1;
+    width: min(80vw, 80vh);
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.cell {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.mole {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: green;
+}
