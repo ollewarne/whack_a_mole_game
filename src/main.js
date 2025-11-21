@@ -14,4 +14,4 @@ game.initGame();
 
 
 gameUi.startButton.addEventListener('click', () => game.start());
-gameUi.startButton.addEventListener('click', () => game.reset());
+gameUi.resetButton.addEventListener('click', () => game.reset());
