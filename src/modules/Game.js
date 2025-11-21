@@ -71,6 +71,15 @@ export class Game {
         }, 1000)
     }
 
+    reset() {
+        this.stopGame();
+
+        this.gameState.score = 0;
+        this.gameState.misses = 0;
+        this.gameState.timeLeft = this.gameDuration;
+        this.updateHud();
+    }
+
     spawnMole() {
         const emptyGameCells = [...this.boardElement.querySelectorAll('.cell:not(.has-mole)')];
         const cell = emptyGameCells[Math.floor(Math.random() * emptyGameCells.length)]
@@ -90,8 +99,6 @@ export class Game {
         for (let mole of this.molesActive) {
             mole.removeMole();
         }
+        this.gameState.gameRunning = false;
     }
-
-
-    //TODO: reset and start function
 }
