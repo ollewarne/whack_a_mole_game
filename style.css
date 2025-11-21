@@ -24,11 +24,11 @@ body {
     height: 100%;
     width: 100%;
     cursor: pointer;
+    display: grid;
+    place-items: center;
 }
 
 .mole {
     width: 60%;
     height: 60%;
-    border-radius: 50%;
-    background-color: green;
 }
