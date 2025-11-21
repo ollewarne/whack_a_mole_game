@@ -68,6 +68,10 @@ export class Game {
             this.spawnMole();
             this.gameState.timeLeft -= 1;
             this.updateHud()
+            if (this.gameState.timeLeft === 0) {
+                this.stopGame();
+                this.endOfGameModal();
+            }
         }, 1000)
     }
 
@@ -100,5 +104,23 @@ export class Game {
             mole.removeMole();
         }
         this.gameState.gameRunning = false;
+    }
+
+    endOfGameModal() {
+        const modal = document.createElement('div');
+        const modalTitle = document.createElement('h3');
+        const modalParagraph = document.createElement('p');
+        modal.className = 'modal';
+        modalTitle.textContent = "Game Over! Click on this box to close";
+        modalParagraph.textContent = `Your final score is: ${this.gameState.score} and you got ${this.gameState.misses} misses`;
+        this.boardElement.appendChild(modal);
+        modal.appendChild(modalTitle);
+        modal.appendChild(modalParagraph);
+
+        modal.addEventListener('click', function modalClick(event) {
+            if (event.target !== modal) modal.remove();
+            modal.remove();
+            removeEventListener('click', modalClick)
+        })
     }
 }
