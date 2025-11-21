@@ -22,7 +22,7 @@ export class Mole {
     removeMole() {
         if (this.timeout) clearTimeout(this.timeout);
         this.timeout = null;
-        this.root.remove();
+        if (this.root?.isConnected) this.root.remove();
         this.cellElement.classList.remove("has-mole");
         this.root = null;
     }
