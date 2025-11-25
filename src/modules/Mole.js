@@ -10,7 +10,7 @@ export class Mole {
     placeMole(onExpire) {
         this.root = document.createElement("img");
         this.root.className = 'mole';
-        this.root.src = '../../images/mole.png';
+        this.root.src = '../.././images/mole.png';
         this.root.alt = "A picture of a cartoon mole"
         this.cellElement.appendChild(this.root);
         this.cellElement.classList.add("has-mole");
