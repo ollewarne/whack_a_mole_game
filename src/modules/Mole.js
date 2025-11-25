@@ -12,6 +12,7 @@ export class Mole {
         this.root.className = 'mole';
         this.root.src = './images/mole.png';
         this.root.alt = "A picture of a cartoon mole"
+        this.root.draggable = "false";
         this.cellElement.appendChild(this.root);
         this.cellElement.classList.add("has-mole");
 
